@@ -271,7 +271,7 @@ def eval_genomes(genomes, config):
             buildings.remove(trash)
 
         for x, car in enumerate(cars):
-            if car.y + car.img.get_height() >= GROUND_LEVEL: #or car.y < 0: # ADD EXPLOIT HERE
+            if car.y + car.img.get_height() >= GROUND_LEVEL or car.y < 0: # ADD EXPLOIT HERE
                 cars.pop(x)
                 nets.pop(x)
                 ge.pop(x)
@@ -296,7 +296,7 @@ def run(config_path):
 # if __name__ == "main":
 #     print("hi")
 local_dir = os.path.dirname(__file__)
-config_path = os.path.join(local_dir, "config-feedforward.txt")
+config_path = os.path.join(local_dir, "config.txt")
     
 run(config_path)
 
